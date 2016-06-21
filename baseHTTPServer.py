@@ -103,7 +103,7 @@ DEFAULT_ERROR_MESSAGE = """\
 DEFAULT_ERROR_CONTENT_TYPE = "text/html"
 
 #capture the flag:
-FLAG_LOG_FILE = "flag.log"
+FLAG_LOG_FILE = "flagserver.log"
 FLAG_CHARS = "?f="
 
 
