@@ -8,7 +8,7 @@ fi
 
 #config var
 basedir=$1
-filefind="*config*|*cfg*"
+filefind="*config*"
 userpass="user|pass"
 #
 for wwwdir in `ls $basedir`; do
