@@ -1,7 +1,8 @@
 #!/bin/bash
 
 iplist_file='./iplist.txt'
-getflag='curl -s http://172.16.80.1:8000/flag.txt'
+getflag='curl -s http://10.0.0.2:8080'
+#getflag='curl -s http://172.16.80.1:8000/flag.txt'
 
 if [ ! -f $iplist_file ]; then
     echo "iplist.txt not exist!"

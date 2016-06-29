@@ -1,0 +1,13 @@
+21/tcp   open     ftp     vsftpd 3.0.2
+22/tcp   open     ssh     OpenSSH 6.6p1 Ubuntu 2ubuntu1 (Ubuntu Linux; protocol 2.0)
+80/tcp   open     http    m0n0wall FreeBSD firewall web interface
+3306/tcp open     mysql   MySQL 5.5.35-1ubuntu1
+6061/tcp filtered unknown
+6062/tcp filtered x11
+6063/tcp filtered x11
+8009/tcp open     ajp13   Apache Jserv (Protocol v1.3)
+8011/tcp open     http    Apache httpd 2.4.7 ((Ubuntu))
+8012/tcp open     http    Apache httpd 2.4.7 ((Ubuntu))
+8080/tcp open     http    Apache Tomcat/Coyote JSP engine 1.1
+8091/tcp open     http    Apache Tomcat/Coyote JSP engine 1.1
+8099/tcp open     http    Apache Tomcat/Coyote JSP engine 1.1
