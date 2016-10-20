@@ -60,7 +60,7 @@ def get_flag(flag_log_file):
                 elif flag_type == 3:
                     r = requests.post(url,timeout=5,data=payload,headers=headers)
                 #print flag
-                msg = '[+]%s %s::%s:%s' %(datetime.now().strftime('%H:%M:%S'),host,r.text.strip(),base64decode(r.text.strip()))
+                msg = '[+]%s %s::%s' %(datetime.now().strftime('%H:%M:%S'),host,r.text.strip())
                 f.write(msg+'\n')
                 print msg
             except Exception,e:

