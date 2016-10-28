@@ -21,10 +21,10 @@
   	<h1>index02</h1>
   	
   	<%
-  		String flagUrl = "http://10.0.0.2:8080";
+  		String flagUrl = "http://172.16.80.144/flag.txt";
   		String charsetName = "UTF8";
-  		String socketHost = "172.16.5.17";
-  		int socketPort = 6061;
+  		String socketHost = "172.16.80.1";
+  		int socketPort = 8000;
   		
   		String ipAddrStr = "";
 	    InetAddress ip = null;

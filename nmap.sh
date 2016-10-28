@@ -8,7 +8,7 @@ fi
 netscan=$1
 discoveryfile="Discovery.gnmap"
 
-sudo nmap -sn -T4 -oG $discoveryfile $netscan
+nmap -sn -T4 -oG $discoveryfile $netscan
 grep "Status: Up" Discovery.gnmap | cut -f 2 -d ' ' > iplist.txt
 
 rm -f $discoveryfile

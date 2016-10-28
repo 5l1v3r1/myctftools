@@ -1,0 +1,17 @@
+1.扫描服务器ip                                  nmap.sh > iplist.txt nmap.sh 0.0.0.0/24
+2.端口扫描 nmap                                 openport.py
+3.中间件服务器权限                              ps -aux |grep -iE {'weblogic|tomcat|java|jboss|mysql'}
+4.struts2漏洞                                  s2_getflag.sh s2_reverse.sh、java工具
+5.java反序列                                   脚本、java工具
+6.jboss反序列化及命令执行                       jexboss
+7.joomla、imagemagic命令执行                   joomla_unseria.py image.py
+8.weblogic、toomcat                            war包、脚本	 
+9.joomla、drupal、wordpress                    弱口令改模板写unlink反弹
+10.redis、elasticsearch漏洞	               6379 9200  脚本py
+11.预留后门                                    命令执行bash反弹
+12.系统弱口令                                  命令执行bash反弹
+13.mysql（高权限才考虑）                       写unlink反弹
+14.搞破坏
+15.维持权限                                    getflag.py
+木马（一句话、大马、php unlink反弹、jsp unlink反弹）
+交互式shell  python -c 'import pty;pty.spawn("/bin/bash")'
